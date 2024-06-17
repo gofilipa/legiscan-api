@@ -1,0 +1,836 @@
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"Albertus Extra Bold";
+	panose-1:2 14 8 2 4 3 4 2 2 4;}
+@font-face
+	{font-family:Marlett;
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	line-height:120%;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	letter-spacing:.2pt;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	background:navy;
+	font-size:12.0pt;
+	font-family:"Tahoma",sans-serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	letter-spacing:.2pt;}
+span.11ptChar
+	{mso-style-name:11ptChar;
+	font-family:"Times New Roman",serif;}
+span.BillHead
+	{mso-style-name:BillHead;
+	font-family:"Times New Roman",serif;
+	font-variant:small-caps;
+	font-weight:bold;}
+span.BillHeading2
+	{mso-style-name:BillHeading2;
+	font-family:"Times New Roman",serif;
+	font-variant:small-caps;
+	font-weight:bold;}
+span.BillHeadUnBold
+	{mso-style-name:BillHeadUnBold;
+	font-family:"Times New Roman",serif;
+	font-variant:small-caps;}
+span.BillLanguage
+	{mso-style-name:BillLanguage;
+	font-family:"Times New Roman",serif;
+	font-style:italic;}
+p.bpuBill, li.bpuBill, div.bpuBill
+	{mso-style-name:bpuBill;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:120%;
+	font-size:26.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.bpuHeadSpon, li.bpuHeadSpon, div.bpuHeadSpon
+	{mso-style-name:bpuHeadSpon;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.bpuHeadSponChar
+	{mso-style-name:bpuHeadSponChar;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.bpuIntro, li.bpuIntro, div.bpuIntro
+	{mso-style-name:bpuIntro;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:120%;
+	font-size:11.0pt;
+	font-family:"Times New Roman",serif;}
+p.bpuLegislature, li.bpuLegislature, div.bpuLegislature
+	{mso-style-name:bpuLegislature;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:120%;
+	font-size:24.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.bpuNormText, li.bpuNormText, div.bpuNormText
+	{mso-style-name:bpuNormText;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	line-height:120%;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.bpuReprint, li.bpuReprint, div.bpuReprint
+	{mso-style-name:bpuReprint;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:120%;
+	font-size:22.0pt;
+	font-family:"Times New Roman",serif;
+	letter-spacing:.2pt;}
+p.bpuSponsor, li.bpuSponsor, div.bpuSponsor
+	{mso-style-name:bpuSponsor;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	line-height:120%;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.bpuState, li.bpuState, div.bpuState
+	{mso-style-name:bpuState;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:120%;
+	font-size:32.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+span.charMarlett
+	{mso-style-name:charMarlett;
+	font-family:Marlett;}
+p.ElevenPt, li.ElevenPt, div.ElevenPt
+	{mso-style-name:ElevenPt;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:11.0pt;
+	font-family:"Times New Roman",serif;}
+p.FronterPage, li.FronterPage, div.FronterPage
+	{mso-style-name:FronterPage;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+p.FronterPage12pt, li.FronterPage12pt, div.FronterPage12pt
+	{mso-style-name:FronterPage12pt;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.FronterPageBillHeading, li.FronterPageBillHeading, div.FronterPageBillHeading
+	{mso-style-name:FronterPageBillHeading;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.2in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.2in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	font-variant:small-caps;}
+p.FronterPageTBox2, li.FronterPageTBox2, div.FronterPageTBox2
+	{mso-style-name:FronterPageTBox2;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+p.FronterPageTextBox, li.FronterPageTextBox, div.FronterPageTextBox
+	{mso-style-name:FronterPageTextBox;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.FronterSameAs, li.FronterSameAs, div.FronterSameAs
+	{mso-style-name:FronterSameAs;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.HangingAnAct, li.HangingAnAct, div.HangingAnAct
+	{mso-style-name:HangingAnAct;
+	mso-style-link:"HangingAnAct Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.2in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.2in;
+	line-height:120%;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	letter-spacing:.2pt;}
+span.HangingAnActChar
+	{mso-style-name:"HangingAnAct Char";
+	mso-style-link:HangingAnAct;
+	letter-spacing:.2pt;}
+span.Para10pt
+	{mso-style-name:Para10pt;
+	font-family:"Times New Roman",serif;}
+p.Pg2Footer, li.Pg2Footer, div.Pg2Footer
+	{mso-style-name:Pg2Footer;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:8.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.StyleFronterPage11pt, li.StyleFronterPage11pt, div.StyleFronterPage11pt
+	{mso-style-name:"Style FronterPage + 11 pt";
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.StyleFronterPageLoweredby3pt, li.StyleFronterPageLoweredby3pt, div.StyleFronterPageLoweredby3pt
+	{mso-style-name:"Style FronterPage + Lowered by  3 pt";
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;
+	position:relative;
+	top:3.0pt;}
+p.StyleFronterSameAsPatternSolid100White, li.StyleFronterSameAsPatternSolid100White, div.StyleFronterSameAsPatternSolid100White
+	{mso-style-name:"Style FronterSameAs + Pattern\: Solid \(100%\) \(White\)";
+	margin:0in;
+	margin-bottom:.0001pt;
+	background:white;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.Style1, li.Style1, div.Style1
+	{mso-style-name:Style1;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+span.Whereas
+	{mso-style-name:Whereas;
+	font-family:"Times New Roman",serif;
+	font-variant:small-caps;
+	font-weight:bold;}
+span.Style10pt
+	{mso-style-name:"Style 10 pt";
+	font-family:"Times New Roman",serif;}
+p.FronterPageNOCAPS, li.FronterPageNOCAPS, div.FronterPageNOCAPS
+	{mso-style-name:FronterPageNOCAPS;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.2in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.bpuWpGraphic, li.bpuWpGraphic, div.bpuWpGraphic
+	{mso-style-name:bpuWpGraphic;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:120%;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	letter-spacing:.2pt;}
+p.sponUdate, li.sponUdate, div.sponUdate
+	{mso-style-name:sponUdate;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+span.fronterpagebillhead
+	{mso-style-name:fronterpagebillhead;
+	font-family:"Times New Roman",serif;
+	font-variant:small-caps;}
+p.FPHangingAnAct, li.FPHangingAnAct, div.FPHangingAnAct
+	{mso-style-name:FPHangingAnAct;
+	mso-style-link:"FPHangingAnAct Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.4in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.2in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	letter-spacing:.2pt;}
+span.FPHangingAnActChar
+	{mso-style-name:"FPHangingAnAct Char";
+	mso-style-link:FPHangingAnAct;
+	letter-spacing:.2pt;}
+span.LeftBrackt
+	{mso-style-name:LeftBrackt;
+	font-family:"Albertus Extra Bold",sans-serif;
+	font-weight:bold;}
+span.RightBrackt
+	{mso-style-name:RightBrackt;
+	font-family:"Albertus Extra Bold",sans-serif;
+	font-weight:bold;}
+span.BoldItal
+	{mso-style-name:BoldItal;
+	font-weight:bold;
+	font-style:italic;}
+p.ApropTab, li.ApropTab, div.ApropTab
+	{mso-style-name:ApropTab;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:15.1pt;
+	margin-bottom:.0001pt;
+	text-indent:-9.35pt;
+	line-height:120%;
+	font-size:11.0pt;
+	font-family:"Times New Roman",serif;
+	letter-spacing:.2pt;}
+p.HangingSup, li.HangingSup, div.HangingSup
+	{mso-style-name:HangingSup;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.2in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.2in;
+	line-height:120%;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	letter-spacing:.2pt;}
+p.HangingTableBottom, li.HangingTableBottom, div.HangingTableBottom
+	{mso-style-name:HangingTableBottom;
+	margin-top:0in;
+	margin-right:1.0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-indent:-.8in;
+	line-height:120%;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	letter-spacing:.2pt;}
+p.HangingTableTop, li.HangingTableTop, div.HangingTableTop
+	{mso-style-name:HangingTableTop;
+	margin-top:0in;
+	margin-right:.5in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-indent:-.8in;
+	line-height:120%;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	letter-spacing:.2pt;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;
+	letter-spacing:.2pt;}
+.MsoChpDefault
+	{font-size:10.0pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 14.0in;
+	margin:1.5in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+@page WordSection2
+	{size:8.5in 14.0in;
+	margin:1.0in 113.75pt 1.0in 113.75pt;}
+div.WordSection2
+	{page:WordSection2;}
+@page WordSection3
+	{size:8.5in 14.0in;
+	margin:1.0in 1.75in 81.0pt 2.0in;}
+div.WordSection3
+	{page:WordSection3;}
+-->
+</style>
+
+
+
+<div class=WordSection1>
+
+<p class=bpuBill><a name=bpuFrontPg></a>ASSEMBLY, No. 4109 </p>
+
+<p class=bpuWpGraphic></p>
+
+<p class=bpuState>STATE OF NEW JERSEY</p>
+
+<p class=bpuLegislature>220th LEGISLATURE</p>
+
+<p class=bpuWpGraphic>&nbsp; </p>
+
+<p class=bpuIntro>INTRODUCED JUNE 2, 2022</p>
+
+<p class=bpuIntro>&nbsp;</p>
+
+</div>
+
+<span style='font-size:11.0pt;line-height:120%;font-family:"Times New Roman",serif'><br
+clear=all style='page-break-before:auto'>
+</span>
+
+<div class=WordSection2>
+
+<p class=bpuIntro>&nbsp;</p>
+
+<p class=bpuSponsor>Sponsored by:</p>
+
+<p class=bpuSponsor>Assemblywoman&nbsp; MILA M. JASEY</p>
+
+<p class=bpuSponsor>District 27 (Essex and Morris)</p>
+
+<p class=bpuSponsor>Assemblywoman&nbsp; VERLINA REYNOLDS-JACKSON</p>
+
+<p class=bpuSponsor>District 15 (Hunterdon and Mercer)</p>
+
+<p class=bpuSponsor>&nbsp;</p>
+
+<p class=bpuSponsor>&nbsp;</p>
+
+<p class=bpuSponsor>&nbsp;</p>
+
+<p class=bpuSponsor>&nbsp;</p>
+
+<p class=bpuSponsor>SYNOPSIS</p>
+
+<p class=bpuNormText>&nbsp;&nbsp;&nbsp;&nbsp; Requires school districts to adopt policies
+concerning needs of transgender students. </p>
+
+<p class=bpuNormText>&nbsp;</p>
+
+<p class=bpuSponsor>CURRENT VERSION OF TEXT </p>
+
+<p class=bpuNormText>&nbsp;&nbsp;&nbsp;&nbsp; As introduced.</p>
+
+<p class=bpuNormText>&nbsp;&nbsp; </p>
+
+</div>
+
+<span style='font-size:10.0pt;font-family:"Times New Roman",serif'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<div class=WordSection3>
+
+<p class=HangingAnAct style='line-height:150%'><span class=BillHead>An Act</span><span
+class=HangingAnActChar> concerning the needs of transgender students in public
+schools, supplementing chapter 36 of Title 18A of the New Jersey Statutes, and
+repealing section 1 of P.L.2017, c.137.</span></p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; <span class=BillHeading2>Be It
+Enacted </span><span class=BillLanguage>by the Senate and General Assembly of
+the State of New Jersey:</span></p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; 1.&nbsp;&nbsp;&nbsp; The Legislature finds
+and declares that:</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; a.&nbsp;&nbsp;&nbsp;&nbsp; The "Law Against
+Discrimination," P.L.1945, c.169 (C.10:5-1 et seq.) generally makes it unlawful
+for schools to subject individuals to differential treatment based on race,
+creed, color, national origin, ancestry, marital status, domestic partnership
+or civil union status, sex, affectional or sexual orientation, gender identity
+or expression, disability or nationality.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; b.&nbsp;&nbsp;&nbsp; Title IX of the
+Education Amendments of 1972 (20 U.S.C. s.1681) specifically prohibits
+discrimination on the basis of sex in federally-funded education programs and activities.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; c.&nbsp;&nbsp;&nbsp;&nbsp; Section 1 of P.L.2017,
+c.137 (C.18A:36-41) directs the Commissioner of Education to establish
+guidelines to provide direction for schools in addressing common issues
+concerning the needs of transgender students, and to assist schools in
+establishing policies and procedures that ensure a supportive and
+nondiscriminatory environment for transgender students. </p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; d.&nbsp;&nbsp;&nbsp; Accordingly, this
+guidance was prepared by the Department of Education after a review of policies
+and guidance from other states and organizations, and in consultation with
+educators, counselors, school psychologists, advocates, and parents. The
+intended purpose of this guidance is to help school and district administrators
+take steps to create an inclusive environment in which transgender and gender
+nonconforming students feel safe and supported, and to ensure that each school
+provides equal educational opportunities for all students, in compliance with
+N.J.A.C.6A:7-1.1 et seq.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; e.&nbsp;&nbsp;&nbsp;&nbsp; Communication with the
+student is paramount. Under the guidance established by the commissioner, schools
+and school districts are encouraged to communicate openly, albeit confidentially,
+with students regarding their transgender status or gender identity. Proper
+communication with the student will ensure that appropriate steps are taken to
+determine a student's preferences and address potential privacy concerns and
+associated risks to the student's well-being.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; f.&nbsp;&nbsp;&nbsp;&nbsp; It is altogether
+fitting and proper to protect transgender and gender nonconforming students by
+establishing a requirement that school districts adopt policies and procedures
+that proactively accept, recognize, and respect a student's asserted gender
+identity.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; 2.&nbsp;&nbsp;&nbsp;  As used in this act:</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; "Gender expression" means
+external manifestations of gender, <br clear=all style='page-break-before:always'>
+expressed through a person's name, pronouns, clothing, haircut, behavior,
+voice, or body characteristics. </p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; "Gender identity" means a
+person's internal, deeply held sense of gender.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; "Gender nonconforming" means a
+person whose gender expression does not conform to the gender expectations of
+their family or community. </p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; "LGBTQ" means lesbian, gay, bisexual,
+transgender, and queer or questioning.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; "Transgender" means a person
+whose gender identity or gender expression differs from those typically
+associated with the sex and gender assigned at birth.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; "Transition" means the process
+by which a transgender person recognizes that their authentic gender identity
+is not the same as the gender assigned at birth, and develops a more affirming
+gender expression that feels authentic. </p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; 3.&nbsp;&nbsp;&nbsp; Notwithstanding any law,
+rule, or regulation to the contrary, each school district in the State shall
+adopt policies and procedures to implement the provisions of this act.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; 4.&nbsp;&nbsp;&nbsp; a.&nbsp;&nbsp; A school district
+shall accept, recognize, and respect a student's asserted gender identity
+without requiring:</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; (1)&nbsp;&nbsp; parental consent; </p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; (2)&nbsp;&nbsp; any threshold diagnosis
+or treatment requirements; or </p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; (3)&nbsp;&nbsp; a legal or court-ordered
+name change.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; There shall be no affirmative
+duty for any school district personnel to notify a student's parent or guardian
+of the student's gender identity or expression.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; b. In the event that a parent
+or guardian of a minor student disagrees with the student regarding the name or
+pronoun to be used at school and in the student's education records, a school
+district shall consult its board attorney regarding the minor student's civil
+rights and protections under the "Law Against Discrimination," P.L.1945, c.169
+(C.10:5-1 et seq.). All school personnel and staff shall continue to refer to
+the student in accordance with the student's chosen name and pronoun at school
+and appropriate school personnel may consider providing resource information
+regarding family counseling and support services outside of the school
+district.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; c.&nbsp;&nbsp;&nbsp;&nbsp; School districts shall anticipate
+and be prepared for disputes between a minor student and the student's parents
+and guardians concerning the student's gender identity or expression and shall
+prominently display on their websites in easily accessible locations resources available
+through advocacy groups and resources from the Department of Children and
+Families and the Department of Education's &quot;Child Abuse, Neglect, and
+Missing Children&quot; webpage.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; d.&nbsp;&nbsp;&nbsp; School district
+personnel shall have an open, but confidential, discussion with the student to
+ascertain the student's preference on matters such as chosen name, chosen
+pronoun to use, and parental communications in order to ensure a safe and
+supportive environment for transgender students. The purpose of the discussion
+shall be to:</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; (1)&nbsp;&nbsp; ensure that a
+transgender student is addressed at school by the name and pronoun chosen by
+the student, regardless of whether a legal name change or change in official
+school records has occurred;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; (2)&nbsp;&nbsp; issue school
+documentation for a transgender student, such as student identification cards,
+in the name chosen by the student; and</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; (3)&nbsp;&nbsp; allow the transgender
+student to dress in accordance with the student's gender identity.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; e.&nbsp;&nbsp;&nbsp;&nbsp; A school district shall
+discuss with the student, and any other individuals at the student's request,
+the risks associated with the student's transgender status being inadvertently
+disclosed, including a discussion that the transgender status may be revealed
+due to other students' discussions at home. The school district shall work with
+the transgender student to ensure awareness of activities and events that may
+inadvertently disclose the transgender student's status.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; 5.&nbsp;&nbsp;&nbsp; a.&nbsp;&nbsp; Each school district
+shall adopt policies and procedures to ensure that its schools provide a safe and
+supportive learning environment that is free from discrimination and harassment
+for transgender students, including students going through a gender transition.
+School districts shall review and update their existing policies and
+procedures, including those regarding classroom activities, school ceremonies,
+school photographs, and dress codes, to verify that transgender students are
+not excluded. </p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; b.&nbsp;&nbsp;&nbsp; To establish and
+maintain a nondiscriminatory environment for all students, including transgender
+and transitioning students, school districts shall: </p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; (1)&nbsp;&nbsp; comply with section 3 of
+P.L.2002, c.83 (C.18A:37-15) and N.J.A.C.6A:16-7.7, which prohibit harassment,
+intimidation and bullying, and require that each district board of education develop,
+adopt, and implement a policy prohibiting harassment, intimidation, or bullying
+on school property, at a school-sponsored function or on a school bus. If
+harassment based on gender identity creates a hostile environment, the school
+shall take prompt and effective steps to end the harassment, prevent its
+recurrence, and, as appropriate, remedy its effects;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; (2)&nbsp;&nbsp; provide staff training
+on sensitivity and respect towards transgender students;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; (3)&nbsp;&nbsp; incorporate social and
+emotional learning concepts into school culture and curricula;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; (4)&nbsp;&nbsp; seek a variety of
+professionals, including school counselors and school psychologists, to provide
+emotional supports for all students who demonstrate a need. School districts
+shall ensure that school counselors and school psychologists are knowledgeable
+regarding issues and concerns relevant to transgender students, students facing
+other gender identity issues, or students who may be transitioning;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; (5)&nbsp;&nbsp; not enforce dress codes
+more strictly for transgender and gender nonconforming students than for other
+students; </p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; (6)&nbsp;&nbsp; honor and recognize a
+student's asserted gender identity, and shall not require any documentation or
+evidence in any form to support a student's asserted gender identity, including
+diagnosis, treatment, or legal name change; and</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; (7)&nbsp;&nbsp; ensure nondiscrimination
+on the basis of gender identity by providing transgender students equal access
+to educational programs and activities.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; 6.&nbsp;&nbsp;&nbsp; a.&nbsp; A school district
+shall keep confidential a current, new, or prospective student's transgender
+status. The district shall work with the student to create an appropriate
+confidentiality plan regarding the student's transgender or transitioning
+status. The student's birth name shall be kept confidential by school and district
+staff.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; b.&nbsp;&nbsp;&nbsp; School district personnel
+and staff shall not disclose any information that reveals a student's
+transgender status except in instances related to a specific and compelling
+need, including the health and safety of a student or an incident of
+bias-related crime. In the event there exists a compelling need for disclosure,
+the school district shall inform the student that the school intends to
+disclose the student's transgender status for the student's protection and
+well-being. Prior to disclosure, the student shall be given the opportunity to
+personally disclose that information. School districts shall make every effort
+to ensure that any disclosure is made in a way that reduces or eliminates the
+risk of re-disclosure and protects the transgender student from further
+harassment. Those measures may include the facilitation of counseling for the
+student and the student's family to promote the family's acceptance and support
+of the student's transgender status.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; c.&nbsp;&nbsp;&nbsp;&nbsp; (1)&nbsp;&nbsp; Pursuant to
+P.L.2002, c.83 (C.18A:37-13 et seq.), a school district is obligated to develop
+a procedure to report, verbally and in writing, an act of harassment,
+intimidation, or bullying committed by an adult or youth against a student. In
+the event of such an investigation involving a transgender or transitioning
+student, the school district shall inform the student of the district's
+obligation to report the findings of the investigation, which permits the
+parents or guardians of the students who are parties to the investigation to
+receive information about the investigation in accordance with State and
+federal law and regulation.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; (2)&nbsp;&nbsp; School district
+officials shall take into account the circumstances of the incident, and the
+status of an involved student as transgender or transitioning, when providing
+notification to parents or guardians of all students involved in the reported
+harassment, intimidation, or bullying incident and when conveying the nature of
+the incident, including the actual or perceived protected category motivating
+the alleged offense, pursuant to N.J.A.C.6A:16-7.7(a)2viii(2).</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; d.&nbsp;&nbsp;&nbsp; School districts shall
+make a concerted effort to ensure that school officials obtain access to only
+those education records in which they have legitimate educational interests. School
+districts shall comply with all State and federal laws and regulations
+regarding the confidentiality of student records and student privacy, including
+the requirements set forth under the "Family Educational Rights and Privacy Act
+of 1974" (20 U.S.C. s.1232g).</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; 7.&nbsp;&nbsp;&nbsp; a.&nbsp; A school district
+shall update student education records including, but not limited to,
+attendance records, transcripts, and Individualized Education Programs, with
+the student's chosen name and gender pronouns, consistent with the student's
+gender identity and expression, and not circulate records with the student's
+birth name, unless directed by the student. If a student has expressed a
+preference to be called by a name other than their birth name, the school
+district shall keep permanent student records containing the student's birth
+name in a separate, confidential file. The file shall only be shared with
+appropriate school staff after consultation with a student. A separate file
+containing records bearing the student's chosen name may also be kept. If the
+student has previously been known at school or in school records by a birth
+name, the principal shall direct school personnel to use the student's chosen
+name and not the student's birth name. </p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; b.&nbsp;&nbsp;&nbsp; Each school district
+shall report to the Department of Education through the NJ SMART Resources and
+Training website a student's name or gender based upon that student's chosen
+name and corresponding gender identity.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; c.&nbsp;&nbsp;&nbsp;&nbsp; If a school district
+changes a student's name or gender identity, it shall maintain locally a
+separate record reflecting the student's legal name and sex assigned at birth
+until receipt of documentation of a legal change of name or gender.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; 8.&nbsp;&nbsp;&nbsp; A school district shall
+allow all students to participate in any gender-segregated classes or athletic
+activities, including intramural and interscholastic athletics, in a manner
+consistent with their gender identity. The district shall:</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; a.&nbsp;&nbsp;&nbsp;&nbsp; provide transgender
+students with the same opportunities to participate in physical education as
+other students in accordance with their gender identity;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; b.&nbsp;&nbsp;&nbsp; permit a transgender
+student to participate in gender-segregated school activities in accordance
+with the student's gender identity;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; c.&nbsp;&nbsp;&nbsp;&nbsp; permit and support the
+formation of student clubs or programs regarding issues related to LGBTQ youth;
+and</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; d.&nbsp;&nbsp;&nbsp; offer support in the
+creation of peer-led educational groups.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; 9.&nbsp;&nbsp;&nbsp; a.&nbsp; A school district
+shall ensure that all students have access to restrooms, locker rooms, and
+changing facilities in accordance with their gender identity to allow for
+involvement in various school programs and activities. The school principal
+shall work with the student and staff to ensure that all parties are aware of
+facility policies and understand that the student may access the restroom,
+locker room, and changing facility that corresponds to the student's gender
+identity. </p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; b.&nbsp;&nbsp;&nbsp; A school district shall
+ensure that a student who reports to the district that the student is
+uncomfortable using a sex-segregated restroom are provided with a safe and
+adequate alternative, including a single, unisex restroom or the nurse's
+restroom. &nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; 10.&nbsp; Section 1 of P.L.2017,
+c.137 (C.18A:36-41) is repealed.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; 11.&nbsp; This act shall take
+effect immediately.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:150%'>STATEMENT</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; This bill codifies into law
+the guidelines issued by the Department of Education concerning the needs of
+transgender students. Current law directs the Commissioner of Education to
+establish guidelines to provide direction for public schools in addressing
+common issues concerning the needs of transgender students, and to assist
+schools in establishing policies and procedures that ensure a supportive and
+nondiscriminatory environment for transgender students. Because this bill
+codifies those guidelines into law, this bill also repeals the section of
+current law requiring the commissioner to establish the guidelines.</p>
+
+<p class=MsoNormal style='line-height:150%'>&nbsp;&nbsp;&nbsp;&nbsp; The guidelines were prepared
+by the department after a review of policies and guidance from other states and
+organizations, and in consultation with educators, counselors, school
+psychologists, advocates, and parents. The intended purpose of these guidelines
+is to help school and district administrators take steps to create an inclusive
+environment in which transgender and gender nonconforming students feel safe
+and supported, and to ensure that each public school provides equal educational
+opportunities for all students, in compliance with N.J.A.C.6A:7-1.1 et seq.</p>
+
+</div>
+
